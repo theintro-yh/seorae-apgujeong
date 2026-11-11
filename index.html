@@ -70,7 +70,13 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background
 .hero-media figcaption{font-size:13px;color:var(--muted);margin-top:10px;display:flex;gap:8px;align-items:center}
 @media (max-width:760px){
   .hero .wrap{grid-template-columns:minmax(0,1fr)}
-  .hero-media{justify-self:start;max-width:300px}
+  .hero-text{justify-items:center;text-align:center}
+  .hero-text .logo{justify-items:center}
+  .hero-text .logo img{margin-inline:auto}
+  .hero h1,.hero p.lede{margin-inline:auto}
+  .hero .ctas,.hero .facts{justify-content:center}
+  .hero-media{justify-self:center;max-width:300px}
+  .hero-media figcaption{justify-content:center;text-align:left}
 }
 /* photo gallery: every photo is the same square, 4 across on desktop, 2 across on phones */
 .photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -423,7 +429,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
            ko:"쫄깃하고 아삭한 식감이 일품인 서래곱창의 프리미엄 특양구이."}}
    ]},
    {group:"sidesH", items:[
-    {ko:"청양차돌볶음밥", rom:"cheongyang chadol bokkeumbap", price:10000, img:9, spicy:true,
+    {ko:"청양차돌볶음밥", rom:"cheongyang chadol bokkeumbap", price:10000, img:9,
      name:{en:"Spicy brisket fried rice",ja:"青陽唐辛子と牛バラのチャーハン",zh:"青阳辣椒牛胸肉炒饭"},
      desc:{en:"Fried rice with thin beef brisket and Korean green chili. A little heat cuts the richness of gopchang.",
            ja:"薄切り牛バラと青陽唐辛子のチャーハン。ピリッとした辛さがホルモンの脂をさっぱりさせます。",
@@ -435,7 +441,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
            ja:"シャーベット状の冷たいスープにキムチとそうめん。焼き物の後にさっぱり。",
            zh:"冰碴汤底配泡菜和细面，酸爽清凉，吃完烤肠特别解腻。",
            ko:"살얼음 동동 띄운 새콤한 육수에 김치와 어우러진 깔끔한 국수."}},
-    {ko:"치즈 불닭볶음면", rom:"cheese buldak bokkeum-myeon", price:6000, img:11, spicy:true, fire:true,
+    {ko:"치즈 불닭볶음면", rom:"cheese buldak bokkeum-myeon", price:6000, img:11, fire:true,
      name:{en:"Cheesy fire noodles",ja:"チーズプルダック炒め麺",zh:"芝士火鸡面"},
      desc:{en:"Spicy stir-fried noodles with melted cheese. The K-food combo that cuts through the richness.",
            ja:"辛い炒め麺ととろけるチーズ。ホルモンの脂をさっぱりさせる韓国の定番の組み合わせ。",
