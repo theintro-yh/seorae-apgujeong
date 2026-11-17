@@ -429,6 +429,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
            ko:"쫄깃하고 아삭한 식감이 일품인 서래곱창의 프리미엄 특양구이."}}
    ]},
    {group:"sidesH", items:[
+    {ko:"누룽지 김치전골 (3~4인분)", rom:"nurungji kimchi jeongol", price:25000, src:"media/menu-jeongol.jpg",
+     name:{en:"Kimchi hot pot with crispy rice (serves 3–4)",ja:"おこげキムチ鍋（3〜4人前）",zh:"锅巴泡菜火锅（3~4人份）"},
+     desc:{en:"A side soup to share after your gopchang. Spicy, warming and great for a hangover, for 3–4 people. (Udon noodles included.)",
+           ja:"コプチャンの後に3〜4人で楽しめるスープメニュー。ピリ辛で、二日酔いにも効く鍋です。（うどん麺が基本で付きます）",
+           zh:"吃完烤肠后适合3~4人分享的汤类菜品，香辣暖胃，还能解酒。（默认含乌冬面）",
+           ko:"곱창을 드신 후 사이드 국물 메뉴로 3~4인이 드실 수 있는 칼칼하고 해장되는 전골입니다. (우동사리 기본 포함)"}},
     {ko:"청양차돌볶음밥", rom:"cheongyang chadol bokkeumbap", price:10000, img:9,
      name:{en:"Spicy brisket fried rice",ja:"青陽唐辛子と牛バラのチャーハン",zh:"青阳辣椒牛胸肉炒饭"},
      desc:{en:"Fried rice with thin beef brisket and Korean green chili. A little heat cuts the richness of gopchang.",
@@ -452,7 +458,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
      desc:{en:"Fluffy egg cooked at the side of the grill pan. Order it once you've eaten most of your gopchang.",
            ja:"鉄板の端でふわふわに焼く卵。コプチャンをある程度食べてから注文するのがおすすめ。",
            zh:"在铁板边上煎得松软的鸡蛋，推荐在牛肠吃得差不多时点。",
-           ko:"곱창을 어느 정도 드신 후 불판 사이드에 포슬포슬한 계란 크러스트를 즐겨보세요."}}
+           ko:"곱창을 어느 정도 드신 후 불판 사이드에 포슬포슬한 계란 크러스트를 즐겨보세요."}},
+    {ko:"양무침 추가", rom:"yang muchim chuga", price:10000, src:"media/menu-yang.jpg",
+     name:{en:"Seasoned tripe salad (extra order)",ja:"ミノの和え物（追加）",zh:"凉拌牛肚（加点）"},
+     desc:{en:"Order this only if you'd like extra. (Served in a larger portion than the complimentary side dish.)",
+           ja:"追加をご希望の場合のみご注文ください。（基本のおかずより多い量でお出しします）",
+           zh:"仅在需要加点时点单即可。（份量比基本小菜更多）",
+           ko:"양무침 '추가를 원하실 경우에만' 주문해 주시면 됩니다. (기본 찬 제공량보다 많은 중량으로 제공됩니다.)"}}
    ]}
   ];
   function won(n){ return "₩" + n.toLocaleString("en-US"); }
@@ -584,7 +596,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       return '<div class="menu-group"><h3>' + esc(t(g.group)) + '</h3><ul class="menu">' +
         g.items.map(function(m){
           var label = showName ? m.name[cur] : m.ko;
-          return '<li><img src="' + (IMG[m.img] || "") + '" alt="' + esc(label) + '" width="96" height="96" loading="lazy">' +
+          return '<li><img src="' + (m.src || IMG[m.img] || "") + '" alt="' + esc(label) + '" width="96" height="96" loading="lazy">' +
             '<div class="body"><div class="ko">' + esc(m.ko) +
             (showName ? ' <span class="rom">' + esc(m.rom) + '</span>' : '') +
             (m.spicy ? ' <span class="tag">' + esc(t("spicy")) + '</span>' : '') +
